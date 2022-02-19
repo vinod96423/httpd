@@ -6,8 +6,8 @@
       yum: name=httpd update_cache=yes state=latest
     - name: Start HTTP Server
       service: name=httpd enabled=yes state=started
-    - name: Insert Index Page
-      template:
-       src: index.html
+    - name: welcome page
+      copy:
+       cotent: Hello this is the first httpd server installation through jenkins 
        dest: /var/www/html/index.html
 ...
