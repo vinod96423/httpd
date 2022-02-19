@@ -1,17 +1,13 @@
 ---
-- hosts: localhost
+- hosts: 172.31.9.214
   become: true
   tasks:
-  - name: install package
-    yum:
-      name: "httpd"
-      state: "present"
-  - name: start apache server
-    service:
-      name: httpd
-      state: started
-      enable: true
-  - name: deploy static website
-    copy:
-      content: This is first HTTPD server config through jenkins pipeline
-      dest: /var/www/html/index.html
+    - name: Install Apache HTTP server
+      yum: name=httpd update_cache=yes state=latest
+    - name: Start HTTP Server
+      service: name=httpd enabled=yes state=started
+    - name: Insert Index Page
+      template:
+       src: index.html
+       dest: /var/www/html/index.html
+...
