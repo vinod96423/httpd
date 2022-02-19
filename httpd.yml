@@ -8,6 +8,6 @@
       service: name=httpd enabled=yes state=started
     - name: welcome page
       copy:
-       cotent: Hello this is the first httpd server installation through jenkins 
+       content: Hello this is the first httpd server installation through jenkins 
        dest: /var/www/html/index.html
 ...
