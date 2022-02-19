@@ -3,9 +3,9 @@
   become: true
   tasks:
     - name: Install Apache HTTP server
-      yum: name=httpd update_cache=yes state=latest
+      yum: name=httpd update_cache=yes state=absent
     - name: Start HTTP Server
-      service: name=httpd enabled=yes state=started
+      service: name=httpd enabled=yes state=stop
     - name: welcome page
       copy:
        content: Hello this is the first httpd server installation through jenkins 
