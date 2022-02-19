@@ -2,6 +2,9 @@
 - hosts: 172.31.9.214
   become: true
   tasks:
-    - name: Install Apache HTTP server
-      yum: name=httpd autoremove = yes state=absent
+    - name: Uninstall Apache HTTP server
+      yum: 
+      -  name=httpd 
+         autoremove = yes 
+         state=absent
 ...
