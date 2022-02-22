@@ -1,5 +1,5 @@
 ---
-- hosts: 172.31.0.66
+- hosts: localhost
   become: true
   tasks:
     - name: Install Apache HTTP server
